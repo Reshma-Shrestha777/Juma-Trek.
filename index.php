@@ -33,7 +33,7 @@
           <li><a href="#seasons">Seasons</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-        <li><a class="btn" href="booking.html"><i class="fas fa-calendar-alt"></i> Book Now</a></li>        </ul>
+        <li><a class="btn" href="booking.php"><i class="fas fa-calendar-alt"></i> Book Now</a></li>        </ul>
       </nav>
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
         <i class="fas fa-bars"></i>
@@ -125,7 +125,7 @@
     <div class="price">$1,199</div>
   </div>
   <!-- Add this Book Now button -->
-  <button class="btn" onclick="window.location.href='booking.html?trek=annapurna-circuit'" style="width: 100%; margin-top: 16px;">
+  <button class="btn" onclick="window.location.href='booking.php?trek=annapurna-circuit'" style="width: 100%; margin-top: 16px;">
     <i class="fas fa-arrow-right"></i> Book This Trek
   </button>
 </div>
@@ -183,8 +183,8 @@
               <i class="fas fa-map-marker-alt"></i> Khumbu Region
             </div>
             <div class="trip-details">
-              <div class="price">$1,799</div>
-              <button class="btn" onclick="window.location.href='booking.html?trek=everest-base-camp'">
+              <div class="price">Rs 240,000</div>
+              <button class="btn" onclick="window.location.href='booking.php?trek=everest-base-camp'">
                 <i class="fas fa-arrow-right"></i> Book Now
               </button>
             </div>
@@ -211,8 +211,8 @@
               <i class="fas fa-map-marker-alt"></i> Annapurna Region
             </div>
             <div class="trip-details">
-              <div class="price">$1,199</div>
-              <button class="btn" onclick="window.location.href='booking.html?trek=annapurna-circuit'">
+              <div class="price">Rs 240,000</div>
+              <button class="btn" onclick="window.location.href='booking.php?trek=annapurna-circuit'">
                 <i class="fas fa-arrow-right"></i> Book Now
               </button>
             </div>
@@ -239,8 +239,8 @@
               <i class="fas fa-map-marker-alt"></i> Langtang Region
             </div>
             <div class="trip-details">
-              <div class="price">$899</div>
-              <button class="btn" onclick="window.location.href='booking.html?trek=everest-base-camp'">
+              <div class="price">Rs 240,000</div>
+              <button class="btn" onclick="window.location.href='booking.php?trek=everest-base-camp'">
                 <i class="fas fa-arrow-right"></i> Book Now
               </button>
             </div>
@@ -249,7 +249,7 @@
       </div>
       
       <div style="text-align: center; margin-top: 40px;">
-  <button class="btn" onclick="window.location.href='all-treks.html'" style="padding: 16px 32px;">
+  <button class="btn" onclick="window.location.href='all-treks.php'" style="padding: 16px 32px;">
     <i class="fas fa-mountain"></i> View All 45+ Trek Routes
   </button>
 </div>
@@ -800,90 +800,58 @@
         <div class="contact-form">
           <h3 style="margin-bottom: 24px; font-size: 24px;">Get in Touch</h3>
           <form onsubmit="event.preventDefault();submitContactForm();">
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-              <div class="form-group">
-                <label for="firstName">First Name *</label>
-                <input id="firstName" type="text" required />
-              </div>
-              <div class="form-group">
-                <label for="lastName">Last Name *</label>
-                <input id="lastName" type="text" required />
-              </div>
-            </div>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
-              <div class="form-group">
-                <label for="contactEmail">Email *</label>
-                <input id="contactEmail" type="email" required />
-              </div>
-              <div class="form-group">
-                <label for="phone">Phone</label>
-                <input id="phone" type="tel" />
-              </div>
-            </div>
-            
             <div class="form-group">
-              <label for="trekInterest">Trek Interest</label>
-              <select id="trekInterest">
-                <option value="">Select a trek or ask for recommendations</option>
-                <option value="everest">Everest Base Camp</option>
-                <option value="annapurna">Annapurna Circuit</option>
-                <option value="langtang">Langtang Valley</option>
-                <option value="manaslu">Manaslu Circuit</option>
-                <option value="mustang">Upper Mustang</option>
-                <option value="custom">Custom Trek</option>
-                <option value="recommendations">Need Recommendations</option>
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject *</label>
+              <select id="subject" name="subject" required>
+                <option value="">Select a topic</option>
+                <option value="Trek Inquiry">Trek Inquiry</option>
+                <option value="Custom Itinerary">Custom Itinerary</option>
+                <option value="Group Booking">Group Booking</option>
+                <option value="Other">Other</option>
               </select>
             </div>
-            
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px;">
-              <div class="form-group">
-                <label for="travelDate">Preferred Date</label>
-                <input id="travelDate" type="month" />
-              </div>
-              <div class="form-group">
-                <label for="groupSize">Group Size</label>
-                <select id="groupSize">
-                  <option value="">Select</option>
-                  <option value="1">Solo</option>
-                  <option value="2">2 people</option>
-                  <option value="3-5">3-5 people</option>
-                  <option value="6+">6+ people</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="experience">Trek Experience</label>
-                <select id="experience">
-                  <option value="">Select</option>
-                  <option value="beginner">Beginner</option>
-                  <option value="intermediate">Intermediate</option>
-                  <option value="advanced">Advanced</option>
-                  <option value="expert">Expert</option>
-                </select>
-              </div>
-            </div>
-            
             <div class="form-group">
-              <label for="contactMessage">Tell us about your dream trek</label>
-              <textarea id="contactMessage" rows="4" placeholder="What are you hoping to experience in Nepal? Any specific requirements or questions?"></textarea>
+              <label for="preferred_date">Preferred Trekking Date</label>
+              <input type="date" id="preferred_date" name="preferred_date">
             </div>
-            
-            <div style="display: flex; gap: 12px; align-items: center; margin-bottom: 20px;">
-              <input type="checkbox" id="newsletter" style="margin: 0;">
-              <label for="newsletter" style="margin: 0; font-size: 14px; color: var(--muted);">I'd like to receive trek updates and special offers</label>
+            <div class="form-group">
+              <label for="trek_duration">Preferred Duration (days)</label>
+              <select id="trek_duration" name="trek_duration">
+                <option value="">Select duration</option>
+                <option value="1-3">1-3 days</option>
+                <option value="4-8">4-8 days</option>
+                <option value="9-15">9-15 days</option>
+                <option value="16+">16+ days</option>
+              </select>
             </div>
-            
-            <div style="display: flex; gap: 12px;">
-              <button class="btn" type="submit" style="flex: 1;">
+            <div class="form-group" style="grid-column: span 2;">
+              <label for="message">Your Message *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell us about your trekking plans, group size, and any special requests..." required></textarea>
+            </div>
+            <div style="grid-column: span 2; text-align: center;">
+              <button type="submit" class="btn" style="width: 100%; max-width: 300px; margin: 0 auto;">
                 <i class="fas fa-paper-plane"></i> Send Message
               </button>
-              <button type="button" onclick="scheduleCall()" class="btn" style="background: white; color: var(--brand); border: 1px solid var(--brand);">
-                <i class="fas fa-phone"></i> Schedule Call
-              </button>
+              <p class="muted" style="margin-top: 12px; font-size: 14px;">
+                We'll respond within 24 hours. For urgent inquiries, please call us at +977-1-4423456
+              </p>
             </div>
           </form>
         </div>
-
         <aside style="display: flex; flex-direction: column; gap: 24px;">
           <div style="background: white; padding: 24px; border-radius: 16px; border: 1px solid var(--secondary); box-shadow: 0 10px 40px var(--shadow);">
             <h4 style="margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">

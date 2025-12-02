@@ -546,7 +546,7 @@ function closeModal() {
 }
 
 function goHome() {
-    window.location.href = 'index.html';
+    window.location.href = 'index.php';
 }
 
 // Utility functions from main script (replicated for booking page)

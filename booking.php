@@ -18,7 +18,7 @@
   
   <header id="header">
     <div class="container topbar">
-      <div class="brand" onclick="window.location.href='index.html'">
+      <div class="brand" onclick="window.location.href='index.php'">
         <div class="logo">JT</div>
         <div>
           <div class="brand-text">JUMA TREK</div>
@@ -27,12 +27,12 @@
       </div>
       <nav id="nav">
         <ul>
-          <li><a href="index.html#trips">Treks</a></li>
-          <li><a href="index.html#training">Preparation</a></li>
-          <li><a href="index.html#gear">Gear</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-          <li><a class="btn" href="index.html"><i class="fas fa-home"></i> Back Home</a></li>
+          <li><a href="index.php">Treks</a></li>
+          <li><a href="index.php#training">Preparation</a></li>
+          <li><a href="index.php#gear">Gear</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a href="index.php#contact">Contact</a></li>
+          <li><a class="btn" href="index.php"><i class="fas fa-home"></i> Back Home</a></li>
         </ul>
       </nav>
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
@@ -507,18 +507,18 @@
         <div class="footer-section">
           <h4>Popular Treks</h4>
           <ul>
-            <li><a href="booking.html?trek=everest-base-camp">Everest Base Camp</a></li>
-            <li><a href="booking.html?trek=annapurna-circuit">Annapurna Circuit</a></li>
-            <li><a href="booking.html?trek=langtang-valley">Langtang Valley</a></li>
-            <li><a href="booking.html?trek=manaslu-circuit">Manaslu Circuit</a></li>
-            <li><a href="booking.html?trek=upper-mustang">Upper Mustang</a></li>
+            <li><a href="booking.php">Everest Base Camp</a></li>
+            <li><a href="booking.php?trek=annapurna-circuit">Annapurna Circuit</a></li>
+            <li><a href="booking.php?trek=langtang-valley">Langtang Valley</a></li>
+            <li><a href="booking.php?trek=manaslu-circuit">Manaslu Circuit</a></li>
+            <li><a href="booking.php?trek=upper-mustang">Upper Mustang</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h4>Support</h4>
           <ul>
-            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="index.php#contact">Contact Us</a></li>
             <li><a href="#" onclick="viewFAQ()">Booking FAQ</a></li>
             <li><a href="#" onclick="viewTerms()">Terms & Conditions</a></li>
             <li><a href="#" onclick="viewPrivacy()">Privacy Policy</a></li>

@@ -19,27 +19,36 @@
       box-shadow: 0 10px 40px var(--shadow);
       margin-bottom: 40px;
       border: 1px solid var(--border);
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+      border: none;
     }
     
     .filter-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    
+    .filter-group {
+      position: relative;
     }
     
     .filter-group label {
       display: block;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       font-weight: 600;
-      color: var(--text-dark);
+      color: var(--brand);
+      font-size: 15px;
     }
     
     .filter-actions {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       justify-content: space-between;
       align-items: center;
+      padding-top: 16px;
+      border-top: 1px solid rgba(0,0,0,0.05);
     }
     
     .results-count {
@@ -148,9 +157,15 @@
     }
     
     .trek-card-price {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 800;
       color: var(--brand);
+    }
+    
+    .trek-card-price::before {
+      content: 'Rs. ';
+      font-size: 16px;
+      font-weight: 600;
     }
     
     .compare-checkbox {
@@ -218,6 +233,28 @@
       margin-bottom: 16px;
       color: var(--muted-light);
     }
+    
+    .filter-select {
+      width: 100%;
+      padding: 12px 20px 12px 16px;
+      border: 2px solid #e9ecef;
+      border-radius: 10px;
+      font-size: 15px;
+      color: var(--text-dark);
+      background-color: white;
+      transition: all 0.3s ease;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235a6d85' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+    
+    .filter-select:focus {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 3px rgba(var(--brand-rgb), 0.1);
+      outline: none;
+    }
   </style>
 </head>
 <body>
@@ -225,7 +262,7 @@
   
   <header id="header">
     <div class="container topbar">
-      <div class="brand" onclick="window.location.href='index.html'">
+      <div class="brand" onclick="window.location.href='index.php'">
         <div class="logo">JT</div>
         <div>
           <div class="brand-text">JUMA TREK</div>
@@ -234,12 +271,12 @@
       </div>
       <nav id="nav">
         <ul>
-          <li><a href="index.html#trips">Home</a></li>
+          <li><a href="index.php#trips">Home</a></li>
           <li><a href="#all-treks">All Treks</a></li>
-          <li><a href="index.html#training">Preparation</a></li>
-          <li><a href="index.html#gear">Gear</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a class="btn" href="booking.html"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
+          <li><a href="index.php#training">Preparation</a></li>
+          <li><a href="index.php#gear">Gear</a></li>
+          <li><a href="index.php#about">About</a></li>
+          <li><a class="btn" href="booking.php"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
         </ul>
       </nav>
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
@@ -362,27 +399,42 @@
             <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-tripadvisor"></i></a>
           </div>
         </div>
         
         <div class="footer-section">
           <h4>Popular Treks</h4>
           <ul>
-            <li><a href="booking.html?trek=everest-base-camp">Everest Base Camp</a></li>
-            <li><a href="booking.html?trek=annapurna-circuit">Annapurna Circuit</a></li>
-            <li><a href="booking.html?trek=langtang-valley">Langtang Valley</a></li>
-            <li><a href="booking.html?trek=manaslu-circuit">Manaslu Circuit</a></li>
-            <li><a href="booking.html?trek=upper-mustang">Upper Mustang</a></li>
+            <li><a href="booking.php?trek=everest-base-camp">Everest Base Camp</a></li>
+            <li><a href="booking.php?trek=annapurna-circuit">Annapurna Circuit</a></li>
+            <li><a href="booking.php?trek=langtang-valley">Langtang Valley</a></li>
+            <li><a href="booking.php?trek=manaslu-circuit">Manaslu Circuit</a></li>
+            <li><a href="booking.php?trek=upper-mustang">Upper Mustang</a></li>
+            <li><a href="all-treks.php">View All Treks</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="index.php#about">About Us</a></li>
+            <li><a href="#" onclick="viewTeam()">Our Team</a></li>
+            <li><a href="index.php#training">Trek Preparation</a></li>
+            <li><a href="index.php#gear">Gear Guide</a></li>
+            <li><a href="#" onclick="viewTerms()">Terms & Conditions</a></li>
+            <li><a href="#" onclick="viewPrivacy()">Privacy Policy</a></li>
           </ul>
         </div>
         
         <div class="footer-section">
           <h4>Support</h4>
           <ul>
-            <li><a href="index.html#contact">Contact Us</a></li>
-            <li><a href="#" onclick="viewFAQ()">Booking FAQ</a></li>
-            <li><a href="#" onclick="viewTerms()">Terms & Conditions</a></li>
-            <li><a href="#" onclick="viewPrivacy()">Privacy Policy</a></li>
+            <li><a href="index.php#contact">Contact Us</a></li>
+            <li><a href="#" onclick="viewFAQ()">FAQ</a></li>
+            <li><a href="#" onclick="viewBookingGuide()">Booking Guide</a></li>
+            <li><a href="#" onclick="viewPackingList()">Packing Lists</a></li>
+            <li><a href="#" onclick="viewTravelTips()">Travel Tips</a></li>
             <li><a href="#" onclick="emergencyContact()">Emergency Contact</a></li>
           </ul>
         </div>
@@ -391,7 +443,7 @@
       <div class="footer-bottom">
         <div>
           <strong>JUMA TREK</strong> &nbsp;|&nbsp; 
-          <span style="color: rgba(255, 255, 255, 0.7);">© 2024 All rights reserved &nbsp;•&nbsp; Built with ❤️ in Nepal</span>
+          <span style="color: rgba(255, 255, 255, 0.7);"> 2024 All rights reserved &nbsp;•&nbsp; Built with in Nepal</span>
         </div>
         <div style="display: flex; gap: 24px; align-items: center;">
           <div style="display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7);">

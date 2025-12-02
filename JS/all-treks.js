@@ -12,7 +12,7 @@ const trekData = [
         difficulty: 'challenging',
         region: 'everest',
         season: ['spring', 'autumn'],
-        price: 1799,
+        price: 240000,
         rating: 4.8,
         reviews: 203,
         badge: 'Best Seller',
@@ -26,7 +26,7 @@ const trekData = [
         difficulty: 'moderate',
         region: 'annapurna',
         season: ['spring', 'autumn'],
-        price: 1199,
+        price: 160000,
         rating: 4.9,
         reviews: 156,
         badge: 'Most Popular',
@@ -40,7 +40,7 @@ const trekData = [
         difficulty: 'moderate',
         region: 'langtang',
         season: ['spring', 'autumn', 'winter'],
-        price: 899,
+        price: 120000,
         rating: 4.7,
         reviews: 89,
         badge: 'Hidden Gem',
@@ -54,7 +54,7 @@ const trekData = [
         difficulty: 'challenging',
         region: 'manaslu',
         season: ['spring', 'autumn'],
-        price: 1599,
+        price: 213000,
         rating: 4.8,
         reviews: 67,
         badge: 'Restricted Area',
@@ -68,7 +68,7 @@ const trekData = [
         difficulty: 'moderate',
         region: 'mustang',
         season: ['spring', 'autumn', 'monsoon'],
-        price: 1899,
+        price: 253000,
         rating: 4.6,
         reviews: 45,
         badge: 'Forbidden Kingdom',
@@ -82,7 +82,7 @@ const trekData = [
         difficulty: 'easy',
         region: 'annapurna',
         season: ['spring', 'autumn', 'winter'],
-        price: 599,
+        price: 80000,
         rating: 4.5,
         reviews: 178,
         badge: 'Sunrise Views',
@@ -96,7 +96,7 @@ const trekData = [
         difficulty: 'expert',
         region: 'everest',
         season: ['spring', 'autumn'],
-        price: 2299,
+        price: 307000,
         rating: 4.9,
         reviews: 34,
         badge: 'Ultimate Challenge',
@@ -110,7 +110,7 @@ const trekData = [
         difficulty: 'expert',
         region: 'kanchenjunga',
         season: ['spring', 'autumn'],
-        price: 2599,
+        price: 347000,
         rating: 4.7,
         reviews: 23,
         badge: 'Wilderness Trek',
@@ -229,12 +229,12 @@ function renderTreks() {
                     ${trek.rating} (${trek.reviews} reviews)
                 </div>
                 <div class="trek-card-footer">
-                    <div class="trek-card-price">$${trek.price}</div>
+                    <div class="trek-card-price">${trek.price.toLocaleString('en-NP')}</div>
                     <div>
                         <button class="btn btn-secondary" onclick="downloadTripItinerary('${trek.name}')">
                             <i class="fas fa-download"></i>
                         </button>
-                        <button class="btn" onclick="window.location.href='booking.html?trek=${trek.id}'">
+                        <button class="btn" onclick="window.location.href='booking.php?trek=${trek.id}'">
                             <i class="fas fa-arrow-right"></i> Book Now
                         </button>
                     </div>
