@@ -230,14 +230,9 @@ function renderTreks() {
                 </div>
                 <div class="trek-card-footer">
                     <div class="trek-card-price">${trek.price.toLocaleString('en-NP')}</div>
-                    <div>
-                        <button class="btn btn-secondary" onclick="downloadTripItinerary('${trek.name}')">
-                            <i class="fas fa-download"></i>
-                        </button>
-                        <button class="btn" onclick="window.location.href='booking.php?trek=${trek.id}'">
-                            <i class="fas fa-arrow-right"></i> Book Now
-                        </button>
-                    </div>
+                    <button class="btn" onclick="window.location.href='booking.php?trek=${trek.id}'">
+                        <i class="fas fa-arrow-right"></i> Book Now
+                    </button>
                 </div>
             </div>
         </div>

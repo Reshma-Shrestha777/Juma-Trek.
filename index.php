@@ -2,7 +2,7 @@
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/booking.css">
+  <script src="js/animations.js" defer></script>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -27,13 +28,14 @@
       </div>
       <nav id="nav">
         <ul>
-          <li><a href="#trips">Trips</a></li>
-          <li><a href="#training">Training</a></li>
-          <li><a href="#gear">Gear</a></li>
-          <li><a href="#seasons">Seasons</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#contact">Contact</a></li>
-        <li><a class="btn" href="booking.php"><i class="fas fa-calendar-alt"></i> Book Now</a></li>        </ul>
+          <li><a href="#trips" class="nav-link">Trips</a></li>
+          <li><a href="#training" class="nav-link">Training</a></li>
+          <li><a href="#gear" class="nav-link">Gear</a></li>
+          <li><a href="#seasons" class="nav-link">Seasons</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+          <li><a class="btn btn-book" href="booking.php"><i class="fas fa-calendar-alt"></i> Book Now</a></li>
+        </ul>
       </nav>
       <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
         <i class="fas fa-bars"></i>
@@ -989,7 +991,7 @@
       <div class="footer-bottom">
         <div>
           <strong>JUMA TREK</strong> &nbsp;|&nbsp; 
-          <span style="color: rgba(255, 255, 255, 0.7);">© 2024 All rights reserved &nbsp;•&nbsp; Built with ❤️ in Nepal</span>
+          <span style="color: rgba(255, 255, 255, 0.7);">© 2024 All rights reserved &nbsp;•&nbsp; Developed by Digital and Beyond Pvt.Ltd.</span>
         </div>
         <div style="display: flex; gap: 24px; align-items: center;">
           <div style="display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7);">

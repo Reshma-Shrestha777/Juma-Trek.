@@ -2,7 +2,7 @@
 ?>
 
 <!doctype html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth;">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/booking.css">
+  <script src="js/animations.js" defer></script>
 </head>
 <body>
   <div class="scroll-progress" id="scrollProgress"></div>
@@ -530,7 +531,7 @@
       <div class="footer-bottom">
         <div>
           <strong>JUMA TREK</strong> &nbsp;|&nbsp; 
-          <span style="color: rgba(255, 255, 255, 0.7);">© 2024 All rights reserved &nbsp;•&nbsp; Built with ❤️ in Nepal</span>
+          <span style="color: rgba(255, 255, 255, 0.7);">© 2024 All rights reserved &nbsp;•&nbsp; Developed by Digital and Beyond Pvt.Ltd.</span>
         </div>
         <div style="display: flex; gap: 24px; align-items: center;">
           <div style="display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7);">

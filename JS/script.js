@@ -17,13 +17,43 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// Smooth scrolling for navigation links
+// Smooth scrolling for navigation links with header offset
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    
+    // Don't prevent default for empty hashes or external links
+    if (href === '#' || href.startsWith('http')) {
+      return;
+    }
+    
     e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    
+    const targetElement = document.querySelector(href);
+    if (!targetElement) return;
+    
+    // Calculate the header height for offset
+    const headerHeight = document.querySelector('#header')?.offsetHeight || 0;
+    const elementPosition = targetElement.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - (headerHeight + 20); // 20px extra space
+    
+    // Use smooth scrolling with offset
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth'
+    });
+    
+    // Update URL without jumping
+    if (history.pushState) {
+      history.pushState(null, null, href);
+    } else {
+      location.hash = href;
+    }
+    
+    // Close mobile menu if open
+    const mobileMenu = document.querySelector('#nav');
+    if (mobileMenu.classList.contains('active')) {
+      toggleMobileMenu();
     }
   });
 });
