@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Book Your Trek - Juma Trek</title>
+  <meta name="description" content="Book your Himalayan adventure with Juma Trek. Secure your spot on Nepal's most breathtaking trails with expert local guides." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link rel="stylesheet" href="CSS/booking.css">
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress"></div>
+  
+  <header id="header">
+    <div class="container topbar">
+      <div class="brand" onclick="window.location.href='index.html'">
+        <div class="logo">JT</div>
+        <div>
+          <div class="brand-text">JUMA TREK</div>
+          <div class="brand-tagline">Walk in Nepal</div>
+        </div>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li><a href="index.html#trips">Treks</a></li>
+          <li><a href="index.html#training">Preparation</a></li>
+          <li><a href="index.html#gear">Gear</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a class="btn" href="index.html"><i class="fas fa-home"></i> Back Home</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Booking Progress -->
+    <div class="booking-progress">
+      <div class="progress-steps">
+        <div class="step active" data-step="1">
+          <div class="step-number">1</div>
+          <div class="step-label">Choose Trek</div>
+        </div>
+        <div class="step" data-step="2">
+          <div class="step-number">2</div>
+          <div class="step-label">Dates & Group</div>
+        </div>
+        <div class="step" data-step="3">
+          <div class="step-number">3</div>
+          <div class="step-label">Your Details</div>
+        </div>
+        <div class="step" data-step="4">
+          <div class="step-number">4</div>
+          <div class="step-label">Review & Pay</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-container">
+      <!-- Left Column: Booking Form -->
+      <div class="booking-form-container">
+        <h1 class="booking-title">Book Your Himalayan Adventure</h1>
+        <p class="booking-subtitle">Secure your spot on Nepal's most breathtaking trails</p>
+
+        <!-- Step 1: Trek Selection -->
+        <div class="booking-step active" id="step-1">
+          <h2>Choose Your Trek</h2>
+          <div class="trek-selection-grid">
+            <div class="trek-option" data-trek="everest-base-camp">
+              <div class="trek-image">
+                <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=400&auto=format&fit=crop" alt="Everest Base Camp">
+                <div class="trek-badge">Best Seller</div>
+              </div>
+              <div class="trek-info">
+                <h3>Everest Base Camp Trek</h3>
+                <div class="trek-meta">
+                  <span><i class="fas fa-calendar-alt"></i> 14 days</span>
+                  <span><i class="fas fa-signal"></i> Challenging</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Khumbu Region</span>
+                </div>
+                <div class="trek-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  4.8 (203 reviews)
+                </div>
+                <div class="trek-price">$1,799</div>
+                <button class="btn select-trek-btn">Select This Trek</button>
+              </div>
+            </div>
+
+            <div class="trek-option" data-trek="annapurna-circuit">
+              <div class="trek-image">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=400&auto=format&fit=crop" alt="Annapurna Circuit">
+                <div class="trek-badge">Most Popular</div>
+              </div>
+              <div class="trek-info">
+                <h3>Annapurna Circuit</h3>
+                <div class="trek-meta">
+                  <span><i class="fas fa-calendar-alt"></i> 12 days</span>
+                  <span><i class="fas fa-signal"></i> Moderate</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Annapurna Region</span>
+                </div>
+                <div class="trek-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  4.9 (156 reviews)
+                </div>
+                <div class="trek-price">$1,199</div>
+                <button class="btn select-trek-btn">Select This Trek</button>
+              </div>
+            </div>
+
+            <div class="trek-option" data-trek="langtang-valley">
+              <div class="trek-image">
+                <img src="https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=400&auto=format&fit=crop" alt="Langtang Valley">
+                <div class="trek-badge">Hidden Gem</div>
+              </div>
+              <div class="trek-info">
+                <h3>Langtang Valley Trek</h3>
+                <div class="trek-meta">
+                  <span><i class="fas fa-calendar-alt"></i> 8 days</span>
+                  <span><i class="fas fa-signal"></i> Moderate</span>
+                  <span><i class="fas fa-map-marker-alt"></i> Langtang Region</span>
+                </div>
+                <div class="trek-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  4.7 (89 reviews)
+                </div>
+                <div class="trek-price">$899</div>
+                <button class="btn select-trek-btn">Select This Trek</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Dates & Group -->
+        <div class="booking-step" id="step-2">
+          <h2>Select Dates & Group Size</h2>
+          
+          <div class="form-section">
+            <h3>Preferred Start Date</h3>
+            <div class="date-selection">
+              <div class="month-navigation">
+                <button class="nav-btn prev-month"><i class="fas fa-chevron-left"></i></button>
+                <h4 id="current-month">March 2024</h4>
+                <button class="nav-btn next-month"><i class="fas fa-chevron-right"></i></button>
+              </div>
+              <div class="calendar" id="calendar">
+                <!-- Calendar will be generated by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Group Information</h3>
+            <div class="group-selection">
+              <div class="group-size">
+                <label>Number of Participants</label>
+                <div class="counter">
+                  <button class="counter-btn" data-action="decrease">-</button>
+                  <span class="counter-value">1</span>
+                  <button class="counter-btn" data-action="increase">+</button>
+                </div>
+              </div>
+              
+              <div class="participant-details">
+                <h4>Participant Details</h4>
+                <div id="participant-forms">
+                  <div class="participant-form">
+                    <h5>Participant 1 (Primary)</h5>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="participant_name[]" required>
+                      </div>
+                      <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="participant_email[]" required>
+                      </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" name="participant_phone[]">
+                      </div>
+                      <div class="form-group">
+                        <label>Date of Birth</label>
+                        <input type="date" name="participant_dob[]">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="booking-actions">
+            <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+            <button class="btn" onclick="nextStep()">Continue to Details</button>
+          </div>
+        </div>
+
+        <!-- Step 3: Personal Details -->
+        <div class="booking-step" id="step-3">
+          <h2>Your Contact Information</h2>
+          
+          <div class="form-section">
+            <h3>Primary Contact</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>First Name *</label>
+                <input type="text" name="first_name" required>
+              </div>
+              <div class="form-group">
+                <label>Last Name *</label>
+                <input type="text" name="last_name" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Email Address *</label>
+                <input type="email" name="email" required>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" name="phone" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Street Address</label>
+              <input type="text" name="address">
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" name="city">
+              </div>
+              <div class="form-group">
+                <label>Country</label>
+                <input type="text" name="country">
+              </div>
+              <div class="form-group">
+                <label>Postal Code</label>
+                <input type="text" name="postal_code">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Emergency Contact</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Emergency Contact Name *</label>
+                <input type="text" name="emergency_name" required>
+              </div>
+              <div class="form-group">
+                <label>Relationship *</label>
+                <input type="text" name="emergency_relationship" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Emergency Phone *</label>
+                <input type="tel" name="emergency_phone" required>
+              </div>
+              <div class="form-group">
+                <label>Emergency Email</label>
+                <input type="email" name="emergency_email">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Health & Experience</h3>
+            <div class="form-group">
+              <label>Previous Trekking Experience</label>
+              <select name="experience_level">
+                <option value="">Select your experience level</option>
+                <option value="beginner">Beginner (First time trekking)</option>
+                <option value="intermediate">Intermediate (Some hiking experience)</option>
+                <option value="advanced">Advanced (Multiple treks completed)</option>
+                <option value="expert">Expert (High altitude experience)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Any medical conditions we should know about?</label>
+              <textarea name="medical_conditions" rows="3" placeholder="Please disclose any medical conditions, allergies, or medications..."></textarea>
+            </div>
+            <div class="form-group">
+              <label>Dietary Requirements</label>
+              <textarea name="dietary_requirements" rows="2" placeholder="Vegetarian, vegan, food allergies, etc..."></textarea>
+            </div>
+          </div>
+
+          <div class="booking-actions">
+            <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+            <button class="btn" onclick="nextStep()">Review & Pay</button>
+          </div>
+        </div>
+
+        <!-- Step 4: Review & Payment -->
+        <div class="booking-step" id="step-4">
+          <h2>Review Your Booking</h2>
+          
+          <div class="booking-summary">
+            <div class="summary-section">
+              <h3>Trek Details</h3>
+              <div id="summary-trek" class="summary-item">
+                <!-- Filled by JavaScript -->
+              </div>
+            </div>
+            
+            <div class="summary-section">
+              <h3>Dates & Group</h3>
+              <div id="summary-dates" class="summary-item">
+                <!-- Filled by JavaScript -->
+              </div>
+            </div>
+            
+            <div class="summary-section">
+              <h3>Participant Details</h3>
+              <div id="summary-participants" class="summary-item">
+                <!-- Filled by JavaScript -->
+              </div>
+            </div>
+            
+            <div class="summary-section">
+              <h3>Cost Breakdown</h3>
+              <div id="summary-cost" class="summary-item">
+                <!-- Filled by JavaScript -->
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Payment Information</h3>
+            <div class="payment-methods">
+              <div class="payment-method active" data-method="card">
+                <i class="fab fa-cc-visa"></i>
+                <span>Credit/Debit Card</span>
+              </div>
+              <div class="payment-method" data-method="paypal">
+                <i class="fab fa-paypal"></i>
+                <span>PayPal</span>
+              </div>
+              <div class="payment-method" data-method="bank">
+                <i class="fas fa-university"></i>
+                <span>Bank Transfer</span>
+              </div>
+            </div>
+
+            <div class="payment-form" id="card-payment">
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Card Number *</label>
+                  <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label>Name on Card *</label>
+                  <input type="text" placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                  <label>Expiry Date *</label>
+                  <input type="text" placeholder="MM/YY" maxlength="5">
+                </div>
+                <div class="form-group">
+                  <label>CVV *</label>
+                  <input type="text" placeholder="123" maxlength="3">
+                </div>
+              </div>
+            </div>
+
+            <div class="payment-form hidden" id="paypal-payment">
+              <p>You will be redirected to PayPal to complete your payment after submitting the booking form.</p>
+            </div>
+
+            <div class="payment-form hidden" id="bank-payment">
+              <p>Bank transfer details will be provided after you submit your booking. Please note your booking is only confirmed after we receive the payment.</p>
+              <div class="bank-info">
+                <strong>Bank Transfer Information:</strong>
+                <p>Account Name: Juma Trek Adventures<br>
+                Bank: Nepal Investment Bank<br>
+                Account Number: 123456789012<br>
+                SWIFT: NIBLNPKT</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="terms" required>
+                I agree to the <a href="#" onclick="viewTerms()">Terms & Conditions</a> and <a href="#" onclick="viewPrivacy()">Privacy Policy</a> *
+              </label>
+            </div>
+            <div class="form-group">
+              <label>
+                <input type="checkbox" name="newsletter">
+                Send me trek preparation tips and special offers
+              </label>
+            </div>
+          </div>
+
+          <div class="booking-actions">
+            <button class="btn btn-secondary" onclick="previousStep()">Back</button>
+            <button class="btn btn-primary" onclick="submitBooking()">
+              <i class="fas fa-lock"></i> Complete Booking
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Booking Summary -->
+      <div class="booking-sidebar">
+        <div class="sidebar-card">
+          <h3>Booking Summary</h3>
+          <div id="sidebar-trek" class="sidebar-item">
+            <div class="sidebar-label">Trek</div>
+            <div class="sidebar-value">Not selected</div>
+          </div>
+          <div id="sidebar-dates" class="sidebar-item">
+            <div class="sidebar-label">Dates</div>
+            <div class="sidebar-value">Not selected</div>
+          </div>
+          <div id="sidebar-participants" class="sidebar-item">
+            <div class="sidebar-label">Participants</div>
+            <div class="sidebar-value">1 person</div>
+          </div>
+          <div class="sidebar-divider"></div>
+          <div id="sidebar-cost" class="sidebar-item total">
+            <div class="sidebar-label">Total Cost</div>
+            <div class="sidebar-value">$0</div>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>What's Included</h3>
+          <ul class="included-list">
+            <li><i class="fas fa-check"></i> Expert local guide</li>
+            <li><i class="fas fa-check"></i> All accommodation</li>
+            <li><i class="fas fa-check"></i> All meals during trek</li>
+            <li><i class="fas fa-check"></i> Permits and fees</li>
+            <li><i class="fas fa-check"></i> Airport transfers</li>
+            <li><i class="fas fa-check"></i> Medical insurance</li>
+            <li><i class="fas fa-check"></i> Emergency oxygen</li>
+          </ul>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Need Help?</h3>
+          <p>Our trek experts are here to assist you:</p>
+          <div class="contact-info">
+            <p><i class="fas fa-phone"></i> +977 01 5555 123</p>
+            <p><i class="fas fa-envelope"></i> bookings@jumatrek.com</p>
+            <p><i class="fas fa-clock"></i> 24/7 Support</p>
+          </div>
+          <button class="btn btn-outline" onclick="openChat()">
+            <i class="fas fa-comment"></i> Live Chat
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <div class="footer-brand">
+            <div class="logo">JT</div>
+            <div>
+              <div class="brand-text" style="color: white;">JUMA TREK</div>
+              <div class="brand-tagline">Walk in Nepal</div>
+            </div>
+          </div>
+          <div class="footer-desc">
+            Experience Nepal's majestic Himalayas with expert local guides. We create authentic, responsible adventures that benefit local communities while providing unforgettable memories.
+          </div>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Popular Treks</h4>
+          <ul>
+            <li><a href="booking.html?trek=everest-base-camp">Everest Base Camp</a></li>
+            <li><a href="booking.html?trek=annapurna-circuit">Annapurna Circuit</a></li>
+            <li><a href="booking.html?trek=langtang-valley">Langtang Valley</a></li>
+            <li><a href="booking.html?trek=manaslu-circuit">Manaslu Circuit</a></li>
+            <li><a href="booking.html?trek=upper-mustang">Upper Mustang</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Support</h4>
+          <ul>
+            <li><a href="index.html#contact">Contact Us</a></li>
+            <li><a href="#" onclick="viewFAQ()">Booking FAQ</a></li>
+            <li><a href="#" onclick="viewTerms()">Terms & Conditions</a></li>
+            <li><a href="#" onclick="viewPrivacy()">Privacy Policy</a></li>
+            <li><a href="#" onclick="emergencyContact()">Emergency Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div>
+          <strong>JUMA TREK</strong> &nbsp;|&nbsp; 
+          <span style="color: rgba(255, 255, 255, 0.7);">© 2024 All rights reserved &nbsp;•&nbsp; Built with ❤️ in Nepal</span>
+        </div>
+        <div style="display: flex; gap: 24px; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7);">
+            <i class="fas fa-certificate"></i>
+            Licensed & Insured
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.7);">
+            <i class="fas fa-award"></i>
+            TripAdvisor Excellence
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmationModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Booking Confirmed! 🎉</h2>
+        <button class="modal-close" onclick="closeModal()">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="confirmation-icon">
+          <i class="fas fa-check-circle"></i>
+        </div>
+        <h3>Thank you for your booking!</h3>
+        <p>Your Himalayan adventure with Juma Trek has been confirmed.</p>
+        <div class="confirmation-details">
+          <div class="confirmation-item">
+            <strong>Booking Reference:</strong>
+            <span id="booking-ref">JT-2024-001</span>
+          </div>
+          <div class="confirmation-item">
+            <strong>Trek:</strong>
+            <span id="confirmation-trek">Everest Base Camp</span>
+          </div>
+          <div class="confirmation-item">
+            <strong>Start Date:</strong>
+            <span id="confirmation-date">March 15, 2024</span>
+          </div>
+          <div class="confirmation-item">
+            <strong>Participants:</strong>
+            <span id="confirmation-participants">1 person</span>
+          </div>
+        </div>
+        <div class="next-steps">
+          <h4>What happens next?</h4>
+          <ul>
+            <li>📧 You'll receive a confirmation email within 5 minutes</li>
+            <li>📋 Our team will contact you for pre-trek preparation</li>
+            <li>🎒 You'll receive detailed packing lists and training guides</li>
+            <li>👨‍💼 Your dedicated guide will be assigned 30 days before departure</li>
+          </ul>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="closeModal()">Download Booking Details</button>
+        <button class="btn btn-primary" onclick="goHome()">Back to Homepage</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="JS/script.js"></script>
+  <script src="JS/booking.js"></script>
+</body>
+</html>
